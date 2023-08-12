@@ -1,0 +1,16 @@
+% Facts about foods and their attributes
+food(carrots, low_calorie, low_sugar, low_sodium).
+food(spinach, low_calorie, low_sugar, low_sodium).
+food(fish, low_calorie, low_sugar, low_sodium).
+food(whole_grains, low_calorie, low_sugar, low_sodium).
+food(berries, low_calorie, low_sugar, low_sodium).
+food(nuts, low_calorie, low_sugar, low_sodium).
+food(lean_protein, low_calorie, low_sugar, low_sodium).
+food(low_fat_dairy, low_calorie, low_sugar, low_sodium).
+
+% Rules to suggest diet based on disease
+suggested_diet(diabetes, FoodList) :-
+    findall(Food, (food(Food, low_calorie, low_sugar, low_sodium)), FoodList).
+
+suggested_diet(high_blood_pressure, FoodList) :-
+    findall(Food, (food(Food, low_calorie, low_sodium)), FoodList).
